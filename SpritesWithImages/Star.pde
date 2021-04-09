@@ -1,30 +1,26 @@
-public class Star implements ICollisionBox
+public class Star extends Sprite implements ICollisionBox
 {
   // Properties / Attributes
-  protected Vector2 pos;
-  protected Vector2 vel;
   
   protected float r;
   
   // Constructor
   public Star(float x, float y, float r)
   {
-    pos = new Vector2(x, y);
-    vel = new Vector2(0, 0); // zero velocity
+    super(x, y); // zero velocity
     this.r = r;
   }
   
   // Constructor with additional parameters
   public Star(float x, float y, float dx, float dy, float r)
   {
-    pos = new Vector2(x, y);
-    vel = new Vector2(dx, dy);
+    super(x, y, dx, dy);
     this.r = r;
   }
   
   // Behaviors
   
-  public void draw()
+  public void drawSprite()
   {
     fill(#37D5FF);
     noStroke();
@@ -57,7 +53,18 @@ public class Star implements ICollisionBox
     endShape();
   }
   
-  public void move()
+  boolean collidesWith(ICollisionBox other)
+  {
+    float dist = this.pos.subtract(other.getPosition()).mag();
+    return dist < this.r + other.getRadius();
+  }
+  
+  float getRadius()
+  {
+    return r;
+  }
+  
+ /* public void move()
   {
     // step the position "one frame" by the velocity vector.
     pos = pos.add(vel);
@@ -67,5 +74,5 @@ public class Star implements ICollisionBox
     
     if(pos.y - 25 > height) pos.y = height -25;
     else if(pos.y -25 < 0) pos.y = -25;
-  }
+  }*/
 }
