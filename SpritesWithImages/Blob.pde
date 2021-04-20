@@ -32,7 +32,20 @@ class Blob extends Sprite implements ICollisionBox
   void drawSprite()
   {
     fill(myColor);
+    // draw the main ellipse
     ellipse(pos.x, pos.y, 2*radius, 2*radius);
+    // posible X changes
+    ellipse(pos.x + width, pos.y, 2*radius, 2*radius);
+    ellipse(pos.x - width, pos.y, 2*radius, 2*radius);
+    // possible Y changes
+    ellipse(pos.x, pos.y + height, 2*radius, 2*radius);
+    ellipse(pos.x, pos.y - height, 2*radius, 2*radius);
+    
+    // the four corners
+    ellipse(pos.x + width, pos.y + height, 2*radius, 2*radius);
+    ellipse(pos.x + width, pos.y - height, 2*radius, 2*radius);
+    ellipse(pos.x - width, pos.y + height, 2*radius, 2*radius);
+    ellipse(pos.x - width, pos.y - height, 2*radius, 2*radius);
   }
   
   boolean collidesWith(ICollisionBox other)

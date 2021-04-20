@@ -64,25 +64,4 @@ void draw()
   
   
   checkCollisions();
-  /*if(blob.collidesWith(star))
-  {
-    blob.vel = blob.vel.inverse();
-  }
-  if(block.collidesWith(star))
-  {
-    block.vel = block.vel.inverse();
-    textSize(50);
-    fill(255, 0, 0);
-    text("BLAM!", 100, 600);
-  }
-  
-  if(blob.collidesWith(block))
-  {
-    textSize(50);
-    fill(255,0,0);
-    text("BOOM",100, 600);
-  }*/
-  
-  //star.followMouse();
-  //star.drawSprite();
 }

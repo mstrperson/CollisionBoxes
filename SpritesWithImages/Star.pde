@@ -38,7 +38,6 @@ public class Star extends Sprite implements ICollisionBox
     Vector2 v10 = v8.rotate(2*PI/5);
     
     beginShape();
-    
     vertex(pos.add(v).x, pos.add(v).y);
     vertex(pos.add(v2).x, pos.add(v2).y);
     vertex(pos.add(v3).x, pos.add(v3).y);
@@ -49,7 +48,6 @@ public class Star extends Sprite implements ICollisionBox
     vertex(pos.add(v8).x, pos.add(v8).y);
     vertex(pos.add(v9).x, pos.add(v9).y);
     vertex(pos.add(v10).x, pos.add(v10).y);
-    
     endShape();
   }
   

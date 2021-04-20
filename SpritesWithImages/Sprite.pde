@@ -37,6 +37,12 @@ abstract class Sprite
   public void move()
   {
     pos = pos.add(vel);
+    
+    if(pos.x > width) pos.x -= width; // subtract width from pos.x
+    else if( pos.x < 0) pos.x += width; // add width to pos.x
+    
+    if(pos.y > height) pos.y -= height;
+    else if(pos.y < 0) pos.y += height;
   }
   
   public Vector2 getPosition()
@@ -94,6 +100,8 @@ abstract class Sprite
     {
       vel = new Vector2(2, 0);
     }
+    
+    if(key == ' ') vel = new Vector2(0, 0);
   }
   public abstract void drawSprite();
 }
